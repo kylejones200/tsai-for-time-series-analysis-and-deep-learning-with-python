@@ -8,6 +8,12 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Conv1D, GlobalAveragePooling1D, Input
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 
+import logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 np.random.seed(42)
 tf.random.set_seed(42)
 
@@ -106,13 +112,13 @@ def main():
     # Print mean metrics
     for name, rows in results.items():
         mae1 = np.mean([r['mae@1'] for r in rows]); maeH = np.mean([r['mae@H'] for r in rows])
-        print(f'{name}: MAE@1={mae1:.4f}, MAE@H={maeH:.4f}')
+        logger.info(f'{name}: MAE@1={mae1:.4f}, MAE@H={maeH:.4f}')
 
     # Plots from last fold
     for name, art in artifacts.items():
         plot_last_fold(name, art, title_suffix=f'(window={window}, horizon={horizon})')
 
-    print('Images written: lstm_forecast.png, cnn_forecast.png')
+    logger.info('Images written: lstm_forecast.png, cnn_forecast.png')
 
 if __name__ == "__main__":
     main()
