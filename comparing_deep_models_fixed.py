@@ -85,17 +85,18 @@ def chrono_cv_eval(X, Y, builders, n_splits=5):
             last_fold_artifacts[name] = (model, Xte, Yte, Yhat)
     return results, last_fold_artifacts
 
-def plot_last_fold(name, artifacts, title_suffix=""):
+def plot_last_fold(name, artifacts, title_suffix="", plot: bool = False):
     model, Xte, Yte, Yhat = artifacts
     # Plot first test window forecast vs truth for visualization
     y_true = Yte[0]
     y_pred = Yhat[0]
-    plt.figure(figsize=(8, 4))
-    plt.plot(range(len(y_true)), y_true, label='Truth')
-    plt.plot(range(len(y_pred)), y_pred, label=f'{name} forecast')
-    plt.title(f'{name} horizon forecast {title_suffix}')
-    plt.xlabel('Steps ahead'); plt.ylabel('Value'); plt.legend()
-    save_fig(f'{name.lower()}_forecast.png')
+    if plot:
+        plt.figure(figsize=(8, 4))
+        plt.plot(range(len(y_true)), y_true, label='Truth')
+        plt.plot(range(len(y_pred)), y_pred, label=f'{name} forecast')
+        plt.title(f'{name} horizon forecast {title_suffix}')
+        plt.xlabel('Steps ahead'); plt.ylabel('Value'); plt.legend()
+        save_fig(f'{name.lower()}_forecast.png')
 
 
 def main():
