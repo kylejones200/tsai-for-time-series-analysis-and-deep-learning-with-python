@@ -1,3 +1,4 @@
+import signalplot
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -17,15 +18,8 @@ logger = logging.getLogger(__name__)
 np.random.seed(42)
 tf.random.set_seed(42)
 
-plt.rcParams.update({
-    'font.family': 'serif',
-    'axes.spines.top': False,
-    'axes.spines.right': False,
-    'axes.linewidth': 0.8,
-})
+signalplot.apply(font_family='serif')
 
-def save_fig(path: str):
-    plt.tight_layout(); plt.savefig(path, bbox_inches='tight'); plt.close()
 
 # Synthetic, reproducible dataset (no external data)
 # Purpose: compare architectures with identical windows/horizon and time-aware CV
@@ -96,7 +90,7 @@ def plot_last_fold(name, artifacts, title_suffix="", plot: bool = False):
         plt.plot(range(len(y_pred)), y_pred, label=f'{name} forecast')
         plt.title(f'{name} horizon forecast {title_suffix}')
         plt.xlabel('Steps ahead'); plt.ylabel('Value'); plt.legend()
-        save_fig(f'{name.lower()}_forecast.png')
+        signalplot.save(f'{name.lower()}_forecast.png')
 
 
 def main():
