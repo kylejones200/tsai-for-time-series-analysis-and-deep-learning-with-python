@@ -1,6 +1,6 @@
 # TSAI for Time Series Analysis and Deep Learning with Python
 
-**⚠️ Requires**: `tsai` library (`pip install tsai`)
+⚠️ Requires: `tsai` library (`pip install tsai`)
 
 ## Introduction
 
@@ -10,10 +10,10 @@
 
 `tsai` stands out because it offers:
 
-1. **State-of-the-Art Models**: Access to advanced architectures like InceptionTime, ResNet, TST, and XCM
-2. **Ease of Use**: Simplified APIs for loading data, training models, and evaluating results
-3. **Performance**: Built on PyTorch, ensuring efficiency and scalability
-4. **Flexibility**: Supports both univariate and multivariate time series data
+1. State-of-the-Art Models: Access to advanced architectures like InceptionTime, ResNet, TST, and XCM
+2. Ease of Use: Simplified APIs for loading data, training models, and evaluating results
+3. Performance: Built on PyTorch, ensuring efficiency and scalability
+4. Flexibility: Supports both univariate and multivariate time series data
 
 ## Installation
 
@@ -23,9 +23,9 @@ pip install tsai
 
 ## Key Features of `tsai`
 
-1. **Deep Learning Models**: Prebuilt architectures for classification, regression, and forecasting
-2. **Data Augmentation**: Built-in support for augmenting time series data
-3. **Interpretability**: Tools to visualize model predictions and feature importance
+1. Deep Learning Models: Prebuilt architectures for classification, regression, and forecasting
+2. Data Augmentation: Built-in support for augmenting time series data
+3. Interpretability: Tools to visualize model predictions and feature importance
 
 ## Loading and Preparing Data
 
@@ -33,7 +33,7 @@ pip install tsai
 
 ### Example Dataset: ArrowHead
 
-The **ArrowHead** dataset is commonly used for time series classification.
+The ArrowHead dataset is commonly used for time series classification.
 
 ```python
 from tsai.data import get_UCR_data
@@ -43,7 +43,7 @@ X, y, splits = get_UCR_data("ArrowHead", split_data=True)
 print(X.shape, y.shape)  # (Samples, Timesteps, Features)
 ```
 
-**Output**:
+Output:
 ```
 (211, 251, 1) (211,)
 ```
@@ -169,17 +169,17 @@ cam.plot(X[splits[1]][0])
 
 | Model | Use Case |
 |-------|----------|
-| **InceptionTime** | Time series classification and regression |
-| **ResNet** | Robust for time series classification |
-| **TST (Transformer)** | Large, multivariate time series |
-| **XCM** | Multivariate time series with categorical and continuous inputs |
+| InceptionTime | Time series classification and regression |
+| ResNet | Robust for time series classification |
+| TST (Transformer) | Large, multivariate time series |
+| XCM | Multivariate time series with categorical and continuous inputs |
 
 ## Key Benefits of `tsai`
 
-1. **Ease of Use**: High-level APIs simplify complex tasks
-2. **Advanced Models**: Access to cutting-edge architectures
-3. **Flexibility**: Handles univariate, multivariate, and hierarchical time series data
-4. **Interpretability**: Tools for visualizing and explaining model predictions
+1. Ease of Use: High-level APIs simplify complex tasks
+2. Advanced Models: Access to cutting-edge architectures
+3. Flexibility: Handles univariate, multivariate, and hierarchical time series data
+4. Interpretability: Tools for visualizing and explaining model predictions
 
 ## Key Takeaways
 
@@ -189,11 +189,11 @@ Give `tsai` a try in your next time series project and experience the power of d
 
 ## Resources
 
-- **tsai Documentation**: https://timeseriesai.github.io/tsai/
-- **tsai GitHub**: https://github.com/timeseriesAI/tsai
-- **fastai**: https://docs.fast.ai/
-- **PyTorch**: https://pytorch.org/
+- tsai Documentation: https://timeseriesai.github.io/tsai/
+- tsai GitHub: https://github.com/timeseriesAI/tsai
+- fastai: https://docs.fast.ai/
+- PyTorch: https://pytorch.org/
 
 ---
 
-**Note**: Requires understanding of deep learning concepts. Start with simpler models if new to neural networks.
+Note: Requires understanding of deep learning concepts. Start with simpler models if new to neural networks.

@@ -1,7 +1,7 @@
 # TSAI for Time Series Analysis and Deep Learning with Python
 
-**Published:** draft
-**Medium:** [https://medium.com/@kyle-t-jones/tsai-for-time-series-analysis-and-deep-learning-with-python-aacaf332ef28](https://medium.com/@kyle-t-jones/tsai-for-time-series-analysis-and-deep-learning-with-python-aacaf332ef28)
+Published: draft
+Medium: [https://medium.com/@kyle-t-jones/tsai-for-time-series-analysis-and-deep-learning-with-python-aacaf332ef28](https://medium.com/@kyle-t-jones/tsai-for-time-series-analysis-and-deep-learning-with-python-aacaf332ef28)
 
 ## About
 
