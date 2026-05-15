@@ -12,7 +12,6 @@ from tsai.learner import TSRegressor
 from tsai.models import InceptionTime
 from tsai.models import TST
 import logging
-import numpy as np
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(
