@@ -20,11 +20,7 @@ def main():
 
     # Download and load the ArrowHead dataset
     X, y, splits = get_UCR_data("ArrowHead", split_data=True)
-    logger.info(X.shape, y.shape)  # (Samples, Timesteps, Features)
-
-    (211, 251, 1)(
-        211,
-    )
+    logger.info("X.shape=%s y.shape=%s  # (samples, timesteps, features)", X.shape, y.shape)
 
 
     # Create DataLoaders for training and validation
