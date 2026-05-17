@@ -2,25 +2,12 @@
 
 Magics and shell lines are commented out. Run with a normal Python interpreter."""
 
-
-# --- code cell ---
-
-# !pip install tsai  # Jupyter-only
-
-
-# --- code cell ---
-
 from tsai.data.external import get_UCR_data
 
 
 def main():
-    # Download and load the ArrowHead dataset
     X, y, splits = get_UCR_data("ArrowHead", split_data=True)
-    print(X.shape, y.shape)  # (Samples, Timesteps, Features)
-
-
-    # --- code cell ---
-
+    print(X.shape, y.shape)
     dsid = "OliveOil"
     X_train, y_train, X_valid, y_valid = get_UCR_data(
         dsid, on_disk=True, force_download=True
@@ -33,10 +20,6 @@ def main():
     )
     y_tensor = cat2int(y_on_disk)
     y_array = y_tensor.numpy()
-
-
-    # --- code cell ---
-
     import tsai.basics as ts
 
     dsid = "NATOPS"
@@ -57,7 +40,11 @@ def main():
         fc_dropout=0.5,
     )
     learn = ts.Learner(dls, model, metrics=accuracy)
-    ts.learn.fit_one_cycle(1, 3e-3)
+    ts.learn.fit_one_cycle(1, 0.003)
+
+
+def main() -> None:
+    main()
 
 
 if __name__ == "__main__":
