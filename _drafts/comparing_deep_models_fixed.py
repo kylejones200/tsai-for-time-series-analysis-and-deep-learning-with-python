@@ -20,7 +20,6 @@ tf.random.set_seed(42)
 
 signalplot.apply(font_family="serif")
 
-
 # Synthetic, reproducible dataset (no external data)
 # Purpose: compare architectures with identical windows/horizon and time-aware CV
 
@@ -118,13 +117,11 @@ def main():
     df = make_sine_dataset(n=1800)
     window, horizon = 48, 12
     X, Y = make_windows(df["y"].values, window=window, horizon=horizon)
-
     builders = {
         "LSTM": lstm_model,
         "CNN": cnn_model,
     }
     results, artifacts = chrono_cv_eval(X, Y, builders, n_splits=5)
-
     # Print mean metrics
     for name, rows in results.items():
         mae1 = np.mean([r["mae@1"] for r in rows])
